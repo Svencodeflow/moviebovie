@@ -1,4 +1,5 @@
 import './App.css';
+import Header from "../src/components/Header";
 //install -->import { Routes, Route } from 'react-router-dom';
 
 // components
@@ -12,6 +13,7 @@ function App() {
     return (
         <div className="App">
             <h1>Appname</h1>
+            <Header />
             {/* <Navbar /> */}
             {/* 
             <Routes>
