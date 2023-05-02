@@ -17,7 +17,6 @@ const MovieDetails = () => {
         fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=e41f6211b1b120a0d9981019e184caba&language=de-DE`)
             .then(res => res.json())
             .then(json => {
-                console.log(json)
                 setMovieDetails(json);
             })
             .catch(err => {
