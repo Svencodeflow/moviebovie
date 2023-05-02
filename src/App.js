@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './pages/Home';
+import MovieDetails from './components/MovieDetails';
 
 //install -->
 import { Routes, Route } from 'react-router-dom';
@@ -19,6 +20,7 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/moviedetails/:id" element={<MovieDetails />} />
             </Routes>
 
         </div>

@@ -12,7 +12,9 @@ function Header(props) {
             .then(data => {
                 setGenres(data.genres);
             })
-    }, [genres]);
+    }, []);
+
+    // console.log(genres);
 
     function handleSelect(event) {
         props.setSelectedGenreId(event.target.value);
@@ -27,8 +29,6 @@ function Header(props) {
                 {genres.map((genre) => (
                     <option key={genre.id} value={genre.id}>{genre.name}</option>
                 ))}
-
-
             </select>
         </div>
     );
