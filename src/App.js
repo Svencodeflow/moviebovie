@@ -7,23 +7,34 @@ import MovieDetails from './components/MovieDetails';
 //install -->import { Routes, Route } from 'react-router-dom';
 
 // components
-//import NavBar from './components/NavBar';
+import Navbar from '../src/components/Navbar';
+// import Footer from '../src/components/Footer';
+// import MovieDetails from '../src/components/MovieDetails';
 
 // pages
 //import Home from './pages/Home';
 
 
 function App() {
+
+    const [message, setMessage] = useState('')
+
+
     return (
         <div className="App">
             <h1>Appname</h1>
 
             <Header />
 
-        
-            <MovieDetails/>
+
+            <MovieDetails />
 
             {/* <Navbar /> */}
+            {/* <h1>Appname</h1> */}
+            <Navbar
+                message={message}
+                setMessage={setMessage}
+            />
             {/* 
             <Routes>
                 <Route path="/" element={<Home />} />

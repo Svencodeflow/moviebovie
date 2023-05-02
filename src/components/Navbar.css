@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #1A2634;
+    height: 122px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "logo input input ."
+    ;
+}
+
+.navbar input {
+    background-image: url("../images/lupe.png");
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: 10px 10px;
+    background-color: grey;
+    color: rgb(255, 255, 255);
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: cell;
+    caret-color: rgb(6, 255, 6);
+}
+
+.e-de-blink-cursor {
+    border-left: 1px solid red !important;
+}
+
+.navbar input:focus {
+    outline: none;
+}
+
+.input_field {
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: input;
+}
+
+.logo_movie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: logo;
+}
