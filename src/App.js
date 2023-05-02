@@ -1,4 +1,13 @@
 import './App.css';
+
+import Home from './pages/Home';
+import MovieDetails from './components/MovieDetails';
+
+//install -->
+import { Routes, Route } from 'react-router-dom';
+
+// components
+
 import { useState } from 'react';
 
 import Header from "../src/components/Header";
@@ -12,6 +21,7 @@ import { useState } from 'react';
 // components
 import Navbar from '../src/components/Navbar';
 import Footer from './components/Footer';
+
 // import Footer from '../src/components/Footer';
 // import MovieDetails from '../src/components/MovieDetails';
 
@@ -21,30 +31,13 @@ import Footer from './components/Footer';
 
 function App() {
 
-    const [message, setMessage] = useState('')
-
-
     return (
         <div className="App">
-            <h1>Appname</h1>
 
-            <Header />
-
-
-            <MovieDetails />
-
-            {/* <Navbar /> */}
-            {/* <h1>Appname</h1> */}
-            <Navbar
-                message={message}
-                setMessage={setMessage}
-            />
-            {/* 
             <Routes>
                 <Route path="/" element={<Home />} />
-            </Routes>     
-            */}
-            <Footer/>
+                <Route path="/moviedetails/:id" element={<MovieDetails />} />
+            </Routes>
         </div>
     );
 };
