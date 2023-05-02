@@ -4,10 +4,13 @@ import Header from "../src/components/Header";
 
 import MovieDetails from './components/MovieDetails';
 
+import { useState } from 'react';
+
 //install -->import { Routes, Route } from 'react-router-dom';
 
 // components
 import Navbar from '../src/components/Navbar';
+import Footer from './components/Footer';
 // import Footer from '../src/components/Footer';
 // import MovieDetails from '../src/components/MovieDetails';
 
@@ -40,6 +43,7 @@ function App() {
                 <Route path="/" element={<Home />} />
             </Routes>     
             */}
+            <Footer/>
         </div>
     );
 };
