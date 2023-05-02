@@ -1,16 +1,56 @@
-import MovieItems from './MovieItems';
+// React
 import { useState, useEffect } from 'react';
+
+// CSS
 import '../css/MovieList.css';
 
+// components
+import Navbar from './Navbar';
+import Header from "./Header";
+import MovieItems from './MovieItems';
+import Footer from './Footer';
+
+
+
 const MovieList = () => {
-    const [allMovies, setAllMovies] = useState([]);
+
+    const [message, setMessage] = useState('');
+    const [movies, setMovies] = useState([]);
+    const [genres, setGenres] = useState([]);
+    const [selectedGenreId, setSelectedGenreId] = useState('');
+
+    // useEffect(() => {
+    //     if (message === '' && selectedGenreId === '') {
+    //         fetch('https://api.themoviedb.org/3/discover/movie?api_key=e41f6211b1b120a0d9981019e184caba&language=de_DE&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_monetization_types=flatrate')
+    //             .then(response => response.json())
+    //             .then(data => setMovies(data.results))
+    //     } else if (selectedGenreId === selectedGenreId && message === '') {
+    //         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=e41f6211b1b120a0d9981019e184caba&with_genres=${selectedGenreId}&language=de_DE&sort_by=popularity.desc`)
+    //             .then(response => response.json())
+    //             .then(data => setMovies(data.results))
+    //     } else if (message === message && selectedGenreId === '') {
+    //         fetch(`https://api.themoviedb.org/3/search/movie?api_key=e41f6211b1b120a0d9981019e184caba&language=de-DE&query=${message}&page=1&include_adult=false`)
+    //             .then(response => response.json())
+    //             .then(data => setMovies(data.results))
+    //     }
+
+    // }, [message, selectedGenreId])
+
     useEffect(() => {
-        fetch('http://api.themoviedb.org/3/movie/popular?api_key=e41f6211b1b120a0d9981019e184caba')
-            .then(res => res.json())
-            .then(json => {
-                setAllMovies(json.results);
-            });
-    }, []);
+        if (message === '' && !selectedGenreId) {
+            fetch('https://api.themoviedb.org/3/discover/movie?api_key=e41f6211b1b120a0d9981019e184caba&language=de_DE&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate')
+                .then(response => response.json())
+                .then(data => setMovies(data.results))
+        } else if (selectedGenreId) {
+            fetch(`https://api.themoviedb.org/3/discover/movie?api_key=e41f6211b1b120a0d9981019e184caba&with_genres=${selectedGenreId}&language=de_DE&sort_by=popularity.desc`)
+                .then(response => response.json())
+                .then(data => setMovies(data.results))
+        } else if (message) {
+            fetch(`https://api.themoviedb.org/3/search/movie?api_key=e41f6211b1b120a0d9981019e184caba&language=de-DE&query=${message}&page=1&include_adult=false`)
+                .then(response => response.json())
+                .then(data => setMovies(data.results))
+        }
+    }, [message, selectedGenreId])
 
     const getGenreNames = (genreIds) => {
         const genres = {
@@ -41,24 +81,38 @@ const MovieList = () => {
 
 
     return (
-        <section className="movieList">
-            <div>
-                {allMovies.map((elt) => {
-                    return (
-                        <MovieItems
-                            key={elt.id}
-                            rating={elt.vote_average}
-                            image={elt.poster_path}
-                            year={elt.release_date}
-                            // genres mappen
-                            genre={getGenreNames(elt.genre_ids)}
-                            title={elt.title}
-                            overview={elt.overview}
-                        />
-                    )
-                })}
-            </div>
-        </section>
+        <div>
+            <Navbar
+                message={message}
+                setMessage={setMessage}
+            />
+            <Header
+                genres={genres}
+                setGenres={setGenres}
+                selectedGenreId={selectedGenreId}
+                setSelectedGenreId={setSelectedGenreId}
+            />
+            <section className="movieList">
+                <div>
+                    {movies.map((elt) => {
+                        return (
+                            <MovieItems
+                                key={elt.id}
+                                rating={elt.vote_average}
+                                image={elt.poster_path}
+                                year={elt.release_date}
+                                // genres mappen
+                                genre={getGenreNames(elt.genre_ids)}
+                                title={elt.title}
+                                overview={elt.overview}
+                                id={elt.id}
+                            />
+                        )
+                    })}
+                </div>
+            </section>
+            <Footer />
+        </div>
     );
 }
 

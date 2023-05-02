@@ -23,22 +23,21 @@ const MovieDetails = () => {
             .catch(err => {
                 console.log(err);
             });
-    }, []);
+    }, [movieId]);
 
     const [movieTrailer, setMovieTrailer] = useState([]);
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=e41f6211b1b120a0d9981019e184caba&language=de-DE`)
+        fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=e41f6211b1b120a0d9981019e184caba`)
             .then(res => res.json())
             .then(data => {
                 setMovieTrailer(data.results[0]);
-                console.log(movieTrailer)
             })
             .catch(err => {
                 console.log(err);
             });
 
-    }, []);
+    }, [movieId]);
 
 
     return (
@@ -78,7 +77,7 @@ const MovieDetails = () => {
                         </div>
                         <div className="trailer">
                             <h3>Watch Trailer</h3>
-                            <iframe width="450" height="240" src={`https://www.youtube.com/embed/${movieTrailer.key}`}></iframe>
+                            <iframe title="Movie Trailer" width="450" height="240" src={`https://www.youtube.com/embed/${movieTrailer.key}`}></iframe>
                         </div>
                     </div>
                 </div>

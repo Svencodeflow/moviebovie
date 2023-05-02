@@ -1,8 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/Header.css'
 
 function Header(props) {
-    // const [selectedGenreId, setSelectedGenreId] = useState('');
     const [genres, setGenres] = useState([]);
 
 
@@ -13,8 +12,6 @@ function Header(props) {
                 setGenres(data.genres);
             })
     }, []);
-
-    // console.log(genres);
 
     function handleSelect(event) {
         props.setSelectedGenreId(event.target.value);
