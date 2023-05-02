@@ -1,4 +1,5 @@
 import './App.css';
+
 import Home from './pages/Home';
 import MovieDetails from './components/MovieDetails';
 
@@ -6,6 +7,21 @@ import MovieDetails from './components/MovieDetails';
 import { Routes, Route } from 'react-router-dom';
 
 // components
+
+import { useState } from 'react';
+
+import Header from "../src/components/Header";
+
+import MovieDetails from './components/MovieDetails';
+
+import { useState } from 'react';
+
+//install -->import { Routes, Route } from 'react-router-dom';
+
+// components
+import Navbar from '../src/components/Navbar';
+import Footer from './components/Footer';
+
 // import Footer from '../src/components/Footer';
 // import MovieDetails from '../src/components/MovieDetails';
 
@@ -22,7 +38,6 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/moviedetails/:id" element={<MovieDetails />} />
             </Routes>
-
         </div>
     );
 };

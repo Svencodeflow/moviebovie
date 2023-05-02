@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Roboto-Light.ttf";
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
+.footer {
+    background-color: #1A2634;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.footerwrapper {
+    width: 54%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerlogo {
+    font-family: "Roboto-Light.ttf";
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    font-weight: 100;
+    gap: 60px;
+    margin-left: 100px;
+}
+
+.sociallinks {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
