@@ -1,5 +1,9 @@
 import './App.css';
+
 import Header from "../src/components/Header";
+
+import MovieDetails from './components/MovieDetails';
+
 //install -->import { Routes, Route } from 'react-router-dom';
 
 // components
@@ -13,7 +17,12 @@ function App() {
     return (
         <div className="App">
             <h1>Appname</h1>
+
             <Header />
+
+        
+            <MovieDetails/>
+
             {/* <Navbar /> */}
             {/* 
             <Routes>
