@@ -38,6 +38,8 @@ const MovieDetails = () => {
 
     }, [movieId]);
 
+    const d = new Date(movieDetails.release_date);
+    const releaseDate = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
     return (
         <div>
@@ -56,7 +58,7 @@ const MovieDetails = () => {
                         <div className="detailsWrapper">
                             <div className="release">
                                 <h3>Release Date</h3>
-                                <p>{movieDetails.release_date}</p>
+                                <p>{releaseDate}</p>
                             </div>
                             <div className="genres">
                                 <h3>Genres</h3>
