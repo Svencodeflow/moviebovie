@@ -4,13 +4,18 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
 .navbar {
     background-color: #1A2634;
     height: 122px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-areas:
-        "logo input input ."
+        "logo input input input ."
     ;
 }
 
@@ -28,6 +33,7 @@
     border: none;
     cursor: cell;
     caret-color: rgb(6, 255, 6);
+    font-family: "roboto";
 }
 
 .e-de-blink-cursor {

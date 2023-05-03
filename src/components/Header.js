@@ -22,7 +22,7 @@ function Header(props) {
             <h1 className='header__hl'>Popular Movies</h1>
             <select className='header__dropdown__select' id="genre-dropdown"
                 value={props.selectedGenreId} onChange={handleSelect}>
-                <option value="">Genre</option>
+                <option value="" className='header__dropdown__select' style={{ fontFamily: 'Arial', fontSize: '14px' }}>Genre</option>
                 {genres.map((genre) => (
                     <option key={genre.id} value={genre.id}>{genre.name}</option>
                 ))}

@@ -8,13 +8,13 @@ html {
 }
 
 @font-face {
-    font-family: anton;
+    font-family: "anton";
     src: url('../fonts/Anton-Regular.ttf');
 }
 
 @font-face {
-    font-family: roboto;
-    src: url('../fonts/Roboto/Roboto-Regular.ttf');
+    font-family: "roboto";
+    src: url('../fonts/Roboto-Regular.ttf');
 }
 
 .header {
@@ -47,6 +47,7 @@ html {
 
 .header__dropdown__select:focus {
     outline: none;
+    font-family: 'roboto';
 }
 
 /* not working! */

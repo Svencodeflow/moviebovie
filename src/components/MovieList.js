@@ -19,11 +19,11 @@ const MovieList = () => {
 
     useEffect(() => {
         if (message === '' && !selectedGenreId) {
-            fetch('https://api.themoviedb.org/3/discover/movie?api_key=e41f6211b1b120a0d9981019e184caba&language=de_DE&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate')
+            fetch('https://api.themoviedb.org/3/discover/movie?api_key=e41f6211b1b120a0d9981019e184caba&language=de-DE&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate')
                 .then(response => response.json())
                 .then(data => setMovies(data.results))
         } else if (selectedGenreId) {
-            fetch(`https://api.themoviedb.org/3/discover/movie?api_key=e41f6211b1b120a0d9981019e184caba&with_genres=${selectedGenreId}&language=de_DE&sort_by=popularity.desc`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?api_key=e41f6211b1b120a0d9981019e184caba&with_genres=${selectedGenreId}&language=de-DE&sort_by=popularity.desc`)
                 .then(response => response.json())
                 .then(data => setMovies(data.results))
         } else if (message) {

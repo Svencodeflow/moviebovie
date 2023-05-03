@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../css/MovieItems.css';
 
 const MovieItems = (props) => {
 
@@ -6,8 +7,12 @@ const MovieItems = (props) => {
     return (
         <article className="movieItems">
             <p>{props.rating}</p>
-            <Link to={`/moviedetails/${props.id}`}>
-                <img src={`https://image.tmdb.org/t/p/w500${props.image}`} alt={`${props.title}`} /></Link>
+            <article>
+                <figure>
+                    <Link to={`/moviedetails/${props.id}`}>
+                        <img src={`https://image.tmdb.org/t/p/w500${props.image}`} alt={`${props.title}`} /></Link>
+                </figure>
+            </article>
             <h3>{year} - {props.genre}</h3>
             <h2>{props.title}</h2>
         </article>

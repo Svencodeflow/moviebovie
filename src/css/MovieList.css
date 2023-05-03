@@ -8,7 +8,7 @@
 MOVIE-LIST
 =============================*/
 .movieList {
-    padding: 0 6.597222vw;
+    padding: 0 6vw;
     padding-bottom: 18vh;
     background-color: #25323F;
 }
@@ -16,7 +16,7 @@ MOVIE-LIST
 .movieList div {
     display: grid;
     grid-template-columns: repeat(5, 15.694444vw);
-    gap: 2.083333%;
+    gap: 2%;
     justify-content: center;
 }
 

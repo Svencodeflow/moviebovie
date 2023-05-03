@@ -85,8 +85,8 @@ const MovieDetails = () => {
             <section className="movieDetails">
                 <div className="movieDetailsPicInfo">
                     <div className="movieDetailsTitlePicture">
-                        <h2>{movieDetails.original_title}</h2>
-                        <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt="movie poster" />
+                        <h2>{movieDetails.title}</h2>
+                        <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.original_title} />
                     </div>
                     <div className="movieDetailsInfo">
                         <div className="detailsWrapper">
@@ -98,22 +98,30 @@ const MovieDetails = () => {
                                 <h3>Genres</h3>
                                 <p>{getGenreNames(movieDetails.genres?.map(genre => genre.id))}</p>
                             </div>
-                            <div className="voting">
-                                <h3>Average Voting</h3>
-                                <p>{movieDetails?.vote_average?.toFixed(1)}</p>
-                            </div>
                             <div className="overview">
-                                <h3>Overview</h3>
+                                <h3>Handlung</h3>
                                 <p>{movieDetails.overview}</p>
                             </div>
+                            <div className="voting">
+                                <h3>User Bewertung</h3>
+                                <p>{movieDetails?.vote_average?.toFixed(1)}</p>
+                            </div>
                             <div className="download">
-                                <a href="https://thumbs.gfycat.com/ImaginativeLinearGreatargus-size_restricted.gif" className="hvr-radial-out">FREE DOWNLOAD</a>
+                                <h3>Watch Trailer</h3>
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="hvr-radial-out">FREE DOWNLOAD</a>
                             </div>
                         </div>
                         <div className="trailer">
-                            <h3>Watch Trailer</h3>
-                            <iframe title="Movie Trailer" width="450" height="240" src={`https://www.youtube.com/embed/${movieTrailer.key}`}></iframe>
+                            {movieTrailer && (
+                                <iframe
+                                    title="Movie Trailer"
+                                    width="450"
+                                    height="240"
+                                    src={`https://www.youtube.com/embed/${movieTrailer.key}`}
+                                ></iframe>
+                            )}
                         </div>
+
                     </div>
                 </div>
             </section>
