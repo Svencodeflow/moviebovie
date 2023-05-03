@@ -8,6 +8,11 @@
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Roboto-Light.ttf";
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
 /* EFFECT */
 
 .hvr-radial-out {
@@ -60,6 +65,22 @@
 
 /* ------ */
 
+::-webkit-scrollbar {
+    width: 7.5px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: #24323F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1A2634;
+    border-radius: 30px;
+}
+
+/* ------ */
+
 * {
     margin: 0;
     padding: 0;
@@ -93,8 +114,9 @@ html {
 }
 
 .movieDetails p {
-    font-family: "Roboto-Regular.ttf";
+    font-family: "Roboto-Light.ttf";
     font-size: 2.45rem;
+    width: 40rem;
 }
 
 .movieDetailsTitlePicture h2 {
@@ -139,7 +161,9 @@ html {
 
 .overview p {
     text-align: justify;
-    width: 35rem;
+    width: 40rem;
+    height: 250px;
+    overflow: scroll;
 }
 
 .download {
