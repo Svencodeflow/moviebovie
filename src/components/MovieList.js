@@ -11,14 +11,11 @@ import MovieItems from './MovieItems';
 import Footer from './Footer';
 
 
-
 const MovieList = () => {
-
     const [message, setMessage] = useState('');
     const [movies, setMovies] = useState([]);
     const [genres, setGenres] = useState([]);
     const [selectedGenreId, setSelectedGenreId] = useState('');
-
 
     useEffect(() => {
         if (message === '' && !selectedGenreId) {
@@ -58,12 +55,8 @@ const MovieList = () => {
             10752: "War",
             37: "Western"
         };
-
         return genreIds.map(genreId => genres[genreId]).join(", ");
     };
-
-
-
     return (
         <div>
             <Navbar
@@ -82,10 +75,9 @@ const MovieList = () => {
                         return (
                             <MovieItems
                                 key={elt.id}
-                                rating={elt.vote_average}
+                                rating={elt.vote_average.toFixed(1)}
                                 image={elt.poster_path}
                                 year={elt.release_date}
-                                // genres mappen
                                 genre={getGenreNames(elt.genre_ids)}
                                 title={elt.title}
                                 overview={elt.overview}

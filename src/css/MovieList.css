@@ -20,13 +20,10 @@ MOVIE-LIST
     justify-content: center;
 }
 
-.movieItems {
-    /* background-color: blue; */
-}
-
 .movieItems p {
     color: white;
     background-color: #21E18C;
+    font-size: 1.5rem;
     width: 40px;
     height: 40px;
     border-radius: 90%;
@@ -45,15 +42,17 @@ MOVIE-LIST
 .movieItems h3 {
     color: #ffffff;
     font-family: Roboto;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 100;
     margin-top: 1vh;
+    text-align: left;
 }
 
 .movieItems h2 {
     color: #ffffff;
     font-family: Anton;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 2vh;
+    text-align: left;
 }
