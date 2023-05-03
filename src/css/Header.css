@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+html {
+    font-size: 10px;
+}
 
 @font-face {
     font-family: anton;
@@ -18,25 +21,29 @@
     display: flex;
     justify-content: space-between;
     background-color: #24323F;
-    padding: 68px 95px 35px;
+    padding: 3vh 7.5vw;
 }
 
 .header__hl {
     color: #FFFFFF;
     font-family: 'anton';
+    font-size: 3rem;
+    font-weight: 400;
 }
 
-.header__dropdown__select {
+#genre-dropdown {
     height: 30px;
     margin: auto 0;
     background-color: #1A2634;
     font-family: 'roboto';
-    color: #FFFFFF;
+    color: white;
     border-radius: 27px;
     border-color: #1A2634;
-    padding: 0 0 0 10px;
+    padding: 0 10px;
+    width: 23.26vw;
     /* appearance: none; */
 }
+
 
 .header__dropdown__select:focus {
     outline: none;

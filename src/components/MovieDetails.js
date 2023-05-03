@@ -38,8 +38,42 @@ const MovieDetails = () => {
 
     }, [movieId]);
 
+
     const d = new Date(movieDetails.release_date);
     const releaseDate = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+    const getGenreNames = (genreIds) => {
+        const genres = {
+            28: "Action",
+            12: "Adventure",
+            16: "Animation",
+            35: "Comedy",
+            80: "Crime",
+            99: "Documentary",
+            18: "Drama",
+            10751: "Family",
+            14: "Fantasy",
+            36: "History",
+            27: "Horror",
+            10402: "Music",
+            9648: "Mystery",
+            10749: "Romance",
+            878: "Science Fiction",
+            10770: "TV Movie",
+            53: "Thriller",
+            10752: "War",
+            37: "Western"
+        };
+
+        if (Array.isArray(genreIds)) {
+            return genreIds.map(genreId => genres[genreId]).join(", ");
+        }
+        else {
+            return '';
+        }
+    };
+
+
 
     return (
         <div>
@@ -62,11 +96,11 @@ const MovieDetails = () => {
                             </div>
                             <div className="genres">
                                 <h3>Genres</h3>
-                                <p>{movieDetails.release_date}</p>
+                                <p>{getGenreNames(movieDetails.genres?.map(genre => genre.id))}</p>
                             </div>
                             <div className="voting">
                                 <h3>Average Voting</h3>
-                                <p>{movieDetails.vote_average}</p>
+                                <p>{movieDetails?.vote_average?.toFixed(1)}</p>
                             </div>
                             <div className="overview">
                                 <h3>Overview</h3>
