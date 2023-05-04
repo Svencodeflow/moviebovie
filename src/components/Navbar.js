@@ -3,6 +3,7 @@ import '../css/Navbar.css';
 // import Lupe from '../images/lupe.png';
 import logo from '../images/MOV.png';
 import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button'
 
 
 const Navbar = (props) => {
@@ -20,7 +21,10 @@ const Navbar = (props) => {
             </div>
             <div className='input_field' >
                 <input type={props.message} onChange={handleMessage} placeholder='Search something here' />
-                <button>Favorite</button>
+            </div>
+            <div className='fav_button' >
+                <Link to='/savedmovies'>
+                    <Button variant="outlined">Favorite</Button></Link>
             </div>
         </nav >
     );

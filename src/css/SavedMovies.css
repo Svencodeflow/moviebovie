@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.saved_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 40px
+}
+
+.img_img h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px black;
+    color: white;
+}
+
+.img_img h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.img_img {
+    font-size: 16px;
+    height: 100vh;
+    background-color: #24323F;
+}
+
+.img_img img {
+    width: 150px;
+    height: 200px;
+}
+
+.img_img h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fav_remove Button {
+    font-size: 15px;
+}

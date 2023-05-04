@@ -15,7 +15,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:
-        "logo input input input ."
+        "logo input input input fav"
     ;
 }
 
@@ -50,6 +50,17 @@
     justify-content: center;
     align-items: center;
     grid-area: input;
+}
+
+.fav_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: fav;
+}
+
+.fav_button Button {
+    font-size: 1.5rem;
 }
 
 .logo_movie {

@@ -1,5 +1,6 @@
 // components
 import MovieDetails from './components/MovieDetails';
+import SavedMovies from './components/SavedMovies';
 
 // pages
 import Home from './pages/Home';
@@ -18,6 +19,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/moviedetails/:id" element={<MovieDetails />} />
+                <Route path="/savedmovies" element={<SavedMovies />} />
             </Routes>
         </div>
     );
