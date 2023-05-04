@@ -166,16 +166,18 @@ html {
     overflow: scroll;
 }
 
-.download {
+.download_button {
     display: flex;
     align-items: center;
+    /* justify-content: space-evenly; */
     margin-bottom: 2rem;
 }
 
-.download {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
+.download_button Button {
+    margin-left: 2rem;
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.5rem;
 }
 
 .download a {
@@ -184,14 +186,13 @@ html {
     background-color: rgb(255, 0, 68);
     padding: 3px 10px;
     border-radius: 20px;
-    font-weight: 700;
+    font-weight: 200;
     border: 1px solid rgb(255, 0, 68);
     margin-left: 65px;
 }
 
 .download a:hover {
     border: 1px solid rgb(255, 0, 68);
-    /* background-color: white; */
     color: rgb(255, 0, 68);
 }
 

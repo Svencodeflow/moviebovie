@@ -4,14 +4,17 @@ import { useParams } from "react-router-dom"
 import '../css/MovieDetails.css'
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Button from '@mui/material/Button'
 
 const MovieDetails = () => {
-    const [message, setMessage] = useState('');
 
     const params = useParams();
     const movieId = params.id;
 
     const [movieDetails, setMovieDetails] = useState([]);
+    const [movieTrailer, setMovieTrailer] = useState([]);
+    const [message, setMessage] = useState('');
+
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=e41f6211b1b120a0d9981019e184caba&language=de-DE`)
@@ -24,7 +27,6 @@ const MovieDetails = () => {
             });
     }, [movieId]);
 
-    const [movieTrailer, setMovieTrailer] = useState([]);
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=e41f6211b1b120a0d9981019e184caba`)
@@ -37,6 +39,13 @@ const MovieDetails = () => {
             });
 
     }, [movieId]);
+
+    const saveMovie = () => {
+        const savedMovies = JSON.parse(localStorage.getItem('movies')) || [];
+        savedMovies.push(movieDetails);
+        localStorage.setItem('movies', JSON.stringify(savedMovies));
+        // window.alert('Film wurde gespeichert');
+    };
 
 
     const d = new Date(movieDetails.release_date);
@@ -108,7 +117,10 @@ const MovieDetails = () => {
                             </div>
                             <div className="download">
                                 <h3>Watch Trailer</h3>
-                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="hvr-radial-out">FREE DOWNLOAD</a>
+                                <div className="download_button">
+                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="hvr-radial-out">FREE DOWNLOAD</a>
+                                    <Button onClick={saveMovie} variant="outlined">Save Favorit</Button>
+                                </div>
                             </div>
                         </div>
                         <div className="trailer">
