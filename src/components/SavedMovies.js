@@ -14,8 +14,6 @@ const SavedMovies = () => {
         setSavedMovies(savedMoviesFromStorage);
     }, []);
 
-    console.log(savedMovies);
-
     const removeMovie = (id) => {
         const savedMoviesFromStorage = JSON.parse(localStorage.getItem('movies')) || [];
         const updatedMovies = savedMoviesFromStorage.filter(movie => movie.id !== id);

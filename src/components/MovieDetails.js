@@ -44,7 +44,6 @@ const MovieDetails = () => {
         const savedMovies = JSON.parse(localStorage.getItem('movies')) || [];
         savedMovies.push(movieDetails);
         localStorage.setItem('movies', JSON.stringify(savedMovies));
-        // window.alert('Film wurde gespeichert');
     };
 
 

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import '../css/MovieItems.css';
 
 const MovieItems = (props) => {
-    console.log(props.year);
 
     const years = props.year.slice(0, 4);
     return (
