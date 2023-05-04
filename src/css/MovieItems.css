@@ -9,10 +9,14 @@
     opacity: 0.52;
     transition: opacity 1s ease 0s;
     transition: transform 1s ease 0s;
-
 }
 
 .movieItems img:hover {
     transform: perspective(600px) rotateY(-10deg);
     opacity: 1;
+}
+
+.movieItems p {
+    z-index: 1;
+    opacity: 0.9;
 }

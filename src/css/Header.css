@@ -31,7 +31,7 @@ html {
     font-weight: 400;
 }
 
-#genre-dropdown {
+/* #genre-dropdown {
     height: 30px;
     margin: auto 0;
     background-color: #1A2634;
@@ -41,8 +41,8 @@ html {
     border-color: #1A2634;
     padding: 0 10px;
     width: 23.26vw;
-    /* appearance: none; */
-}
+    appearance: none;
+} */
 
 
 .header__dropdown__select:focus {
