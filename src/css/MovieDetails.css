@@ -166,6 +166,10 @@ html {
     overflow: scroll;
 }
 
+.download h3 {
+    margin-bottom: 15px;
+}
+
 .download_button {
     display: flex;
     align-items: center;

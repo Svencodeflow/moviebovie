@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import '../css/MovieItems.css';
 
 const MovieItems = (props) => {
+    console.log(props.year);
 
-    const year = props.year.slice(0, 4);
+    const years = props.year.slice(0, 4);
     return (
         <article className="movieItems">
             <article>
@@ -14,7 +15,7 @@ const MovieItems = (props) => {
                         <img src={`https://image.tmdb.org/t/p/w500${props.image}`} alt={`${props.title}`} /></Link>
                 </figure>
             </article>
-            <h3>{year} - {props.genre}</h3>
+            <h3>{years} - {props.genre}</h3>
             <h2>{props.title}</h2>
         </article>
 
