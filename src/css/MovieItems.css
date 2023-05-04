@@ -18,5 +18,9 @@
 
 .movieItems p {
     z-index: 1;
-    opacity: 0.9;
+    opacity: 0.95;
+}
+
+.movieDropDown {
+    z-index: 2;
 }

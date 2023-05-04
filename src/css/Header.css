@@ -31,27 +31,7 @@ html {
     font-weight: 400;
 }
 
-/* #genre-dropdown {
-    height: 30px;
-    margin: auto 0;
-    background-color: #1A2634;
-    font-family: 'roboto';
-    color: white;
-    border-radius: 27px;
-    border-color: #1A2634;
-    padding: 0 10px;
-    width: 23.26vw;
-    appearance: none;
-} */
-
-
 .header__dropdown__select:focus {
     outline: none;
     font-family: 'roboto';
 }
-
-/* not working! */
-/* .header__dropdown__select option:checked::before {
-    transform: rotate(180deg);
-    color: green;
-} */
