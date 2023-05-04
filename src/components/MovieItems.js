@@ -6,8 +6,9 @@ const MovieItems = (props) => {
     const year = props.year.slice(0, 4);
     return (
         <article className="movieItems">
-            <p>{props.rating}</p>
             <article>
+
+                <p className="test">{props.rating}</p>
                 <figure>
                     <Link to={`/moviedetails/${props.id}`}>
                         <img src={`https://image.tmdb.org/t/p/w500${props.image}`} alt={`${props.title}`} /></Link>
